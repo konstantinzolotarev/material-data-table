@@ -47,6 +47,16 @@
             font-weight: 400;
         }
 
+        :host > ::content table tbody iron-icon{
+            color: rgba(0, 0, 0, 0.54);
+        }
+
+        :host > ::content table [actions] a,
+        :host > ::content table .actions a {
+            color: rgba(0, 0, 0, 0.54);
+            font-size: 18px;
+        }
+
         :host > ::content table th {
         @apply(- -paper-font-body1);
             color: var(--secondary-text-color);
