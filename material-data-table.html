@@ -5,6 +5,7 @@
     <style>
         :host {
             display: block;
+            --table-border-color: #e5e5e5;
         }
 
         :host > ::content table {
@@ -12,11 +13,13 @@
             border-collapse: collapse;
             background: white;
             border-radius: 3px;
-            border: 1px solid #e5e5e5;
+            border: 1px solid var(--table-border-color);
         }
 
         :host > ::content table thead th,
-        :host > ::content table thead th a
+        :host > ::content table thead th a,
+        :host > ::content table tfoot td,
+        :host > ::content table tfoot td a
         {
             @apply(--paper-font-common-base)
 
@@ -55,14 +58,32 @@
         :host > ::content table .actions a {
             color: rgba(0, 0, 0, 0.54);
             font-size: 18px;
+            text-decoration: none;
+        }
+
+        :host > ::content table tbody td {
+            border-bottom: 1px solid;
+            border-bottom-color: var(--table-border-color);
         }
 
         :host > ::content table th {
-        @apply(- -paper-font-body1);
+            @apply(- -paper-font-body1);
             color: var(--secondary-text-color);
             text-align: left;
             border-bottom: 1px solid;
-            border-bottom-color: #e5e5e5;
+            border-bottom-color: var(--table-border-color);
+        }
+
+        :host > ::content table tfoot td.pagination {
+            text-align: right;
+        }
+
+        :host > ::content table tfoot td {
+            @apply(- -paper-font-body1);
+            color: var(--secondary-text-color);
+            text-align: left;
+            border-top: 1px solid;
+            border-top-color: var(--table-border-color);
         }
 
         :host > ::content table tbody tr {
